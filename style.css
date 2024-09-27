@@ -1,42 +1,46 @@
 
-/* General Styles */
-
-
-
-
-/* 
--------------Welcome page----------------> */
-#welcome-page{
-    margin-bottom: 0%;
-    padding-top: 100px;
-    padding-bottom: 10px;
+/* General Section Styles */
+#welcome-page {
+    display: flex;
+    align-items: center;  /* Center the content vertically */
+    justify-content: center;  /* Center the content horizontally */
+    height: 100vh;  /* Full viewport height */
+    overflow: hidden;  /* Hide overflow */
+    padding-top: 20px; /* Add top padding to create a gap on mobile */
 }
-#welcome-page h1{
 
-    font-family: 'Lora', serif; /* Elegant serif font */
-    color: #333; /* Dark text color */
-    text-align:center; /* Center alignment */
-    margin: 1px; /* Margin around the heading */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
-    
+.banner {
+    width: 100%;  /* Make the banner take the full width */
+    max-width: 100%;  /* Ensure it doesn't exceed the viewport width */
+}
 
+.banner img {
+    width: 100%;  /* Responsive width */
+    height: auto;  /* Maintain aspect ratio */
+    object-fit: cover;  /* Cover the area without distorting */
 }
-#welcome-page p{
-    font-size:0.9rem;
-    font-weight: bold;
-    padding: left;
-    
+
+/* General Section Styles */
+section {
+    text-align: center;
 }
-#welcome-page h1::first-letter{
- 
-    font-weight: bold;
-    color: #674636;
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    #welcome-page {
+        height: auto;  /* Allow auto height on smaller screens */
+        padding-top: 55px; /* Increase top padding for mobile devices */
+    }
+
+    .banner img {
+        width: 100%;  /* Ensure it remains responsive */
+        max-height: 70vh; /* Limit max height for the image on smaller screens */
+        object-fit: cover; /* Keep the aspect ratio */
+    }
 }
-#welcome-page p::first-letter {
-  
-    font-weight: bold;
-    color: #674636;
-}
+
+
+
 
 
 
@@ -157,68 +161,114 @@ section .content {
 
 
 
-/* --------------About Us---------------------------------------------- */
+/* ----------- About Us Section Styles ----------- */
+
 #about-us {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: #EBD3F8;
-    padding-left: 0px;
+    padding: 4rem 2rem;
     margin-bottom: 4rem;
-    
-    
-}
-
-#about-us img {
-    max-width: 100%;
-    height: auto;
+    position: relative;
+    overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Ensure text is centered */
+
+
 }
 
-#about-us .content {
-    max-width:70%;
-    text-align: center;
-    font-weight: bold;
-    
-}
-
+/* Heading */
 #about-us h2 {
-    font-size: 1.375rem;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #2E073F;
+    margin-bottom: 1rem;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+    text-align: center; /* Center the heading */
 }
 
+/* Divider */
+#about-us .divider {
+    width: 100px;
+    height: 3px;
+    background-color: #674636;
+    margin: 0 auto 2rem; /* Center the divider */
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+}
 
+/* Text Content */
+#about-us .content {
+    max-width: 900px;
+    text-align: center; /* Center the content block */
+    font-weight: 400;
+    z-index: 1;
+    position: relative;
+    padding: 0 1rem; /* Add padding for smaller screens */
+    margin-bottom: 4rem;
+}
 
+/* Paragraph Styling */
 #about-us p {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight:400;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
     color: #333;
-    margin-bottom: 3px;
     text-align: justify;
+    margin-bottom: 0;
+    font-weight: 400;
+    padding: 0 1rem; /* Add padding for alignment */
 }
 
+/* Highlight first letter */
 #about-us p::first-letter {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #674636;
 }
 
-#about-us .content p {
-    padding: 0 0rem;
-}
-
-/* Optional: Add a subtle animation to the section */
+/* Animation */
 #about-us {
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
+
+/* Keyframe for fadeIn effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Optional Gradient Background */
+#about-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #EBD3F8 50%, #674636 100%);
+    z-index: 0;
+    opacity: 0.2;
+    pointer-events: none;
+    border-radius: 15px;
+}
+
+/* Optional Box Shadow on Content */
+#about-us .content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Ensure the content box is centered */
+}
+
 
 @keyframes fadeIn {
     to {
@@ -330,259 +380,125 @@ section .content {
     transform: scale(1.05);
 }
 
+/* Style for the product list with bullet points */
+ul {
+    list-style-type: disc;  /* Keep default bullet points (disc type) */
+    padding-left: 20px;     /* Add left padding to create space for the bullets */
+    margin-top: 20px;       /* Add top margin for spacing */
+}
+
+ul li {
+    text-align: left;       /* Align the text to the left */
+    margin-bottom: 10px;    /* Add space between each item */
+    font-size: 16px;        /* Adjust font size */
+    line-height: 1.6;       /* Increase line height for better readability */
+}
+
+/* Optional: to style the strong tags within list items */
+ul li strong {
+    color: #333;            /* Change the color of strong text */
+}
 
 
 
-
-
-
-
-
-
-
-#products {
+/* ----------- How We Differ Section ----------- */
+#how-we-differ {
     display: flex;
     flex-direction: column;
     align-items: center;
-  
-    padding: 50px 20px;
-}
-
-#products img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-}
-
-#products .content {
-    font-weight: bold;
-    font-weight:400;
-    max-width:70%;
-    text-align: justify;
-}
-
-
-#products h2 {
-    font-size: 1.375rem;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-  
-}
-
-#products p {
-    font-size: 1rem;
-    line-height: 1.5;
-    font-weight:400;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-#products ul {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 30px;
-}
-
-#products ul li {
-    font-size: 1rem;
-    margin: 10px 0;
-    text-align: left;
-}
-
-#products ul li strong {
-    color: #674636;
-}
-
-#products p::first-letter {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #674636;
-}
-
-/* Fade-in animation for the section */
-#products {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-    /* Slider------------------------------------- -------------------------*/
-
-/* Targeting only the slider inside #slider-container */
-#slider-container .slider {
-    width: 800px;
-    height: 400px;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-#slider-container .slides {
-    width: 400%;
-    height: 100%;
-    display: flex;
-    transition: transform 0.6s ease-in-out;
-}
-
-#slider-container .slide {
-    width: 100%;
-    height: 100%;
-}
-
-#slider-container .slide img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
-
-/* Radio button checked to slide transformation */
-#radio1:checked ~ .slides {
-    transform: translateX(0%);
-}
-#radio2:checked ~ .slides {
-    transform: translateX(-100%);
-}
-#radio3:checked ~ .slides {
-    transform: translateX(-200%);
-}
-#radio4:checked ~ .slides {
-    transform: translateX(-300%);
-}
-
-/* Navigation and buttons */
-#slider-container .navigation-auto,
-#slider-container .navigation-manual {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: -40px;
-}
-
-#slider-container .manual-btn {
-    border: 2px solid #fff;
-    padding: 5px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin: 10px;
-    transition: background 0.4s;
-}
-
-#slider-container .manual-btn:hover {
-    background: #fff;
-}
-
-#slider-container .navigation-auto div {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #fff;
-    margin: 10px;
-    transition: background 0.4s;
-}
-
-#slider-container .auto-btn1.active,
-#slider-container .auto-btn2.active,
-#slider-container .auto-btn3.active,
-#slider-container .auto-btn4.active {
-    background-color: #333;
-}
-
-
-
-
-
-
-
-
-/* ---------------How we differ-----------------------------------------> */
-#how-we-differ{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #EBD3F8;
-    padding: 50px 20px;
+    justify-content: center; /* Ensure content is centered */
+    background-color: #F4F3F8; /* Light background color for the section */
+    padding: 4rem 2rem;
+    margin: 0 auto 4rem; /* Center the section and provide equal bottom margin */
     color: #111;
-}
-
-#how-we-differ img {
-    max-width: 100%;
-    height: auto;
+    text-align: center;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 90%; /* Set a maximum width to avoid stretching */
 }
 
+/* Content inside the section */
 #how-we-differ .content {
-    font-weight:400;
-    max-width:70%;
-    text-align:justify;
+    max-width: 900px;
+    font-weight: 400;
+    text-align: justify;
+    padding: 0 1rem;
+    margin: 0 auto; /* Ensure content is centered */
+    margin-bottom: 4rem;
+    margin-top: 4rem;
 }
 
+/* Heading Styles */
 #how-we-differ h2 {
-    font-size: 1.375rem;
-    color: #111;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #2E073F;
+    margin-bottom: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-align: center;
 }
 
+/* Horizontal line styling */
+#how-we-differ hr {
+    width: 100px;
+    height: 3px;
+    background-color: #674636;
+    margin: 0 auto 2rem;
+    border-radius: 5px;
+}
+
+/* Paragraph Styles */
 #how-we-differ p {
-    font-size: 1rem;
-    font-weight:400;
-    line-height: 1.;
-    color: #111;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: #333;
+    margin-bottom: 2rem;
 }
 
-#how-we-differ ul {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 30px;
-}
-
-#how-we-differ ul li {
-    font-size: 1rem;
-    margin: 10px 0;
-    text-align: left;
-}
-
-#how-we-differ ul li strong {
-    color: #674636;
-}
-
+/* First letter styling */
 #how-we-differ p::first-letter {
     font-size: 2rem;
     font-weight: bold;
     color: #674636;
 }
 
-/* Fade-in animation for the section */
+/* List Styling */
+#how-we-differ ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+#how-we-differ ul li {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    line-height: 1.6rem;
+}
+
+#how-we-differ ul li strong {
+    color: #674636; /* Highlighted text color */
+}
+
+/* Eco-Benefits specific styling */
+.eco-benefits {
+    text-align: left;
+}
+
+/* Fade-in animation */
 #how-we-differ {
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
-.eco-benefits{
-    text-align:center;
-}
+
 
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
 }
+
 /* <!-- FAQ Section -------------------------------> */
 #faq {
     padding: 50px ;
@@ -692,14 +608,14 @@ section .content {
 #recipe-suggestions p {
     font-size: 1rem;
     margin-bottom: 2rem;
-    color: #333;
+    color: #fff;
 }
 
 .recipes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+    display: flex;               /* Use flexbox for side-by-side alignment */
+    flex-wrap: wrap;             /* Allow wrapping if needed */
+    justify-content: center;     /* Center the recipe cards */
+    gap: 1.5rem;                 /* Add space between the cards */
 }
 
 .recipe {
@@ -709,18 +625,37 @@ section .content {
     padding: 1.5rem;
     width: 300px;
     text-align: left;
+    background-size: cover;      /* Make the background cover the entire div */
+    background-position: center; /* Center the background image */
+    color: white;                /* Change text color to white for readability */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* Space out content for consistency */
 }
 
-.recipe h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #2E073F;
+/* Specific backgrounds for each recipe */
+.recipe:nth-child(1) {
+    background-image: url('./pages/images/Idli/Classic\ Soft\ Idli.jpeg'); /* Replace with your image */
 }
 
-.recipe p {
-    font-size: 0.9rem;
-    color: #666;
+.recipe:nth-child(2) {
+    background-image: url('./pages/images/Dosa/NeerDosa.jpeg'); /* Replace with your image */
 }
+
+.recipe:nth-child(3) {
+    background-image: url('./pages/images/RagiDosa/RagiPaneerDosa.jpeg'); /* Replace with your image */
+}
+
+/* Text overlay styling */
+.recipe h3, .recipe p {
+
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+/* Button styling */
 .btnn {
     display: inline-block;
     margin-top: 1rem;
