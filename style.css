@@ -1,4 +1,16 @@
 
+/* General Styles */
+
+
+
+
+/* 
+-------------Welcome page----------------> */
+
+
+
+
+
 /* General Section Styles */
 #welcome-page {
     display: flex;
@@ -8,6 +20,11 @@
     overflow: hidden;  /* Hide overflow */
     padding-top: 20px; /* Add top padding to create a gap on mobile */
 }
+
+img {
+    -webkit-filter: grayscale(10%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(10%);
+  }
 
 .banner {
     width: 100%;  /* Make the banner take the full width */
@@ -163,86 +180,21 @@ section .content {
 
 /* ----------- About Us Section Styles ----------- */
 
+/* Styles for About Us Section */
+
+/* Styles for About Us Section */
 #about-us {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: #EBD3F8;
-    padding: 4rem 2rem;
-    margin-bottom: 4rem;
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    text-align: center; /* Ensure text is centered */
-
-
-}
-
-/* Heading */
-#about-us h2 {
-    font-size: 2.5rem;
-    color: #2E073F;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-    z-index: 1;
-    text-align: center; /* Center the heading */
-}
-
-/* Divider */
-#about-us .divider {
-    width: 100px;
-    height: 3px;
-    background-color: #674636;
-    margin: 0 auto 2rem; /* Center the divider */
-    border-radius: 5px;
-    position: relative;
-    z-index: 1;
-}
-
-/* Text Content */
-#about-us .content {
-    max-width: 900px;
-    text-align: center; /* Center the content block */
-    font-weight: 400;
-    z-index: 1;
-    position: relative;
-    padding: 0 1rem; /* Add padding for smaller screens */
-    margin-bottom: 4rem;
-}
-
-/* Paragraph Styling */
-#about-us p {
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-    color: #333;
-    text-align: justify;
-    margin-bottom: 0;
-    font-weight: 400;
-    padding: 0 1rem; /* Add padding for alignment */
-}
-
-/* Highlight first letter */
-#about-us p::first-letter {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #674636;
-}
-
-/* Animation */
-#about-us {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
-
-/* Keyframe for fadeIn effect */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    justify-content: center; /* Center content vertically */
+    background: #EBD3F8; /* Light background color */
+    padding: 5vh 2vw; /* Responsive padding */
+    margin: 0 auto 4rem; /* Center section horizontally */
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: auto; /* Allow content height */
 }
 
 /* Optional Gradient Background */
@@ -253,34 +205,106 @@ section .content {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #EBD3F8 50%, #674636 100%);
+    background: linear-gradient(135deg, #EBD3F8 50%, #674636 100%); /* Gradient background */
     z-index: 0;
-    opacity: 0.2;
-    pointer-events: none;
-    border-radius: 15px;
+    opacity: 0.1; /* Subtle gradient */
+    border-radius: 1rem;
 }
 
-/* Optional Box Shadow on Content */
-#about-us .content {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 0 auto; /* Ensure the content box is centered */
+/* Content inside the section */
+.content {
+    position: relative; /* Position for layering */
+    max-width: 90vw; /* Responsive max width */
+    padding: 2vh 2vw;
+    background: #fff; /* White background for content */
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensure content is above the background */
 }
 
+/* Heading Styles */
+#about-us h2 {
+    font-size: 2rem; /* Adjusted size for larger screens */
+    color: #2E073F;
+    margin-bottom: 1rem; /* Adjusted margin */
+}
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
+/* Divider */
+.divider {
+    width: 10vw; /* Responsive divider width */
+    height: 0.3rem;
+    background: #674636;
+    margin: 0 auto 1.5rem; /* Centered margin */
+}
+
+/* Text Content */
+.text {
+    font-size: 1rem; /* Adjusted size for larger screens */
+    line-height: 1.5; /* Standard line height */
+    color: #333;
+    text-align: justify;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+/* Media Queries for Better Responsiveness */
+@media (max-width: 768px) {
+    #about-us h2 {
+        font-size: 4vw; /* Responsive font size for mobile */
+    }
+    .text {
+        font-size: 3.5vw; /* Responsive font size for mobile */
     }
 }
+
+@media (max-width: 480px) {
+    #about-us h2 {
+        font-size: 5vw; /* Further reduced for very small screens */
+    }
+    .text {
+        font-size: 4vw; /* Further reduced for very small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Video attach */
+
+        
+.video-container {
+    width: 80vw;                /* Width is 80% of the viewport width */
+    max-width: 900px;           /* Limit the width on larger screens */
+    height: auto;               /* Allow height to be automatic based on aspect ratio */
+    aspect-ratio: 16 / 9;       /* Maintain the 16:9 aspect ratio */
+    position: relative;
+    margin: 0 auto;             /* Center the container horizontally */
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    padding: 50px;
+}
+
+
+
 
 /* ---------Our Products Range-------------------------------------------------------> */
 
 /* <!--Recipe Suggestions Section -------------------------------------> */
 /* Recipe Suggestions Section */
 /* Subproduct card styles with specific background images */
+
 
 
 #products1 {
@@ -402,63 +426,73 @@ ul li strong {
 
 
 /* ----------- How We Differ Section ----------- */
+/* Styles for How We Differ Section */
 #how-we-differ {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Ensure content is centered */
-    background-color: #F4F3F8; /* Light background color for the section */
-    padding: 4rem 2rem;
-    margin: 0 auto 4rem; /* Center the section and provide equal bottom margin */
-    color: #111;
+    justify-content: center; /* Center content vertically */
+    background: #F4F3F8; /* Light background color */
+    padding: 5vh 2vw; /* Responsive padding */
+    margin: 0 auto 4rem; /* Center section horizontally */
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    max-width: 90%; /* Set a maximum width to avoid stretching */
+    position: relative; /* Needed for pseudo-element */
+}
+
+/* Optional Gradient Background */
+#how-we-differ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #F4F3F8 50%, #674636 100%); /* Gradient background */
+    z-index: 0;
+    opacity: 0.1; /* Subtle gradient */
+    border-radius: 1rem; /* Match the border radius of the section */
 }
 
 /* Content inside the section */
 #how-we-differ .content {
-    max-width: 900px;
-    font-weight: 400;
-    text-align: justify;
-    padding: 0 1rem;
-    margin: 0 auto; /* Ensure content is centered */
-    margin-bottom: 4rem;
-    margin-top: 4rem;
+    position: relative; /* Position for layering */
+    max-width: 90vw; /* Responsive max width */
+    padding: 3rem 2vw; /* Responsive padding for content */
+    background: #fff; /* White background for content */
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensure content is above the background */
 }
 
 /* Heading Styles */
 #how-we-differ h2 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Increased size for better visibility */
     color: #2E073F;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
+    margin-bottom: 1.5rem; /* Consistent margin */
+    text-transform: uppercase; /* Uppercase for emphasis */
 }
 
 /* Horizontal line styling */
 #how-we-differ hr {
-    width: 100px;
-    height: 3px;
+    width: 100px; /* Fixed width for consistent appearance */
+    height: 0.3rem;
     background-color: #674636;
-    margin: 0 auto 2rem;
-    border-radius: 5px;
+    margin: 1rem auto; /* Centered margin with top spacing */
 }
 
 /* Paragraph Styles */
 #how-we-differ p {
-    font-size: 1.2rem;
-    line-height: 1.8rem;
+    font-size: 1rem; /* Adjusted size for larger screens */
+    line-height: 1.5; /* Moderate line height for readability */
     color: #333;
-    margin-bottom: 2rem;
+    margin: 0.5rem 0 1.5rem; /* Consistent spacing around paragraphs */
 }
 
 /* First letter styling */
 #how-we-differ p::first-letter {
-    font-size: 2rem;
+    font-size: 1.5rem; /* Slightly larger for emphasis */
     font-weight: bold;
     color: #674636;
 }
@@ -467,37 +501,41 @@ ul li strong {
 #how-we-differ ul {
     list-style-type: none;
     padding: 0;
-    margin-bottom: 2rem;
+    margin: 1rem 0; /* Margin for spacing */
     text-align: left;
 }
 
 #how-we-differ ul li {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-    line-height: 1.6rem;
+    font-size: 1rem; /* Consistent font size for list items */
+    margin: 0.5rem 0; /* Reduced margin between list items */
+    line-height: 1.5; /* Consistent line height */
 }
 
 #how-we-differ ul li strong {
     color: #674636; /* Highlighted text color */
 }
 
-/* Eco-Benefits specific styling */
-.eco-benefits {
-    text-align: left;
-}
-
-/* Fade-in animation */
-#how-we-differ {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
-
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
+/* Media Queries for Better Responsiveness */
+@media (max-width: 768px) {
+    #how-we-differ h2 {
+        font-size: 4vw; /* Responsive font size for mobile */
+    }
+    #how-we-differ p,
+    #how-we-differ ul li {
+        font-size: 3.5vw; /* Responsive font size for mobile */
     }
 }
+
+@media (max-width: 480px) {
+    #how-we-differ h2 {
+        font-size: 5vw; /* Further reduced for very small screens */
+    }
+    #how-we-differ p,
+    #how-we-differ ul li {
+        font-size: 4vw; /* Further reduced for very small screens */
+    }
+}
+
 
 /* <!-- FAQ Section -------------------------------> */
 #faq {
