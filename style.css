@@ -1,3 +1,4 @@
+
 /* General Section Styles */
 #welcome-page {
     display: flex;
@@ -13,16 +14,40 @@ img {
     filter: grayscale(10%);
   }
 
-.banner {
-    width: 100%;  /* Make the banner take the full width */
-    max-width: 100%;  /* Ensure it doesn't exceed the viewport width */
+  .banner {
+    width: 100%;                 /* Make the banner take the full width */
+    max-width: 100%;             /* Ensure it doesn't exceed the viewport width */
+    overflow: hidden;            /* Hide any overflow */
 }
 
 .banner img {
-    width: 100%;  /* Responsive width */
-    height: auto;  /* Maintain aspect ratio */
-    object-fit: cover;  /* Cover the area without distorting */
+    width: 100%;                 /* Responsive width for the image */
+    height: auto;                /* Maintain aspect ratio */
+    object-fit: cover;           /* Cover the area without distorting the image */
+    display: block;              /* Ensure no extra space around the image */
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner {
+        height: 300px;           /* Set a fixed height on smaller screens */
+    }
+
+    .banner img {
+        object-position: center; /* Center the image when object-fit is used */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 200px;           /* Reduce banner height for very small screens */
+    }
+
+    .banner img {
+        object-position: center; /* Keep the image centered */
+    }
+}
+
 
 /* General Section Styles */
 section {
@@ -263,7 +288,6 @@ section .content {
 
 /* Video attach */
 
-        
 .video-container {
     width: 80vw;                /* Width is 80% of the viewport width */
     max-width: 900px;           /* Limit the width on larger screens */
@@ -271,16 +295,31 @@ section .content {
     aspect-ratio: 16 / 9;       /* Maintain the 16:9 aspect ratio */
     position: relative;
     margin: 0 auto;             /* Center the container horizontally */
+    padding: 0;                 /* Remove padding on container */
 }
 
 .video-container iframe {
-    width: 100%;
-    height: 100%;
+    width: 100%;                /* Ensure the iframe takes full width of the container */
+    height: 100%;               /* Full height of the container */
     position: absolute;
     top: 0;
     left: 0;
     border: none;
-    padding: 50px;
+    padding: 0;                 /* Remove padding inside iframe */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .video-container {
+        width: 95vw;            /* Increase width on smaller screens to utilize space */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container {
+        width: 100vw;           /* Full width on very small screens */
+        padding: 10px;          /* Add some padding for better presentation */
+    }
 }
 
 
