@@ -1,193 +1,20 @@
 
 /* General Section Styles */
-#welcome-page {
-    display: flex;
-    align-items: center;  /* Center the content vertically */
-    justify-content: center;  /* Center the content horizontally */
-    height: 100vh;  /* Full viewport height */
-    overflow: hidden;  /* Hide overflow */
-    padding-top: 20px; /* Add top padding to create a gap on mobile */
-}
-
-img {
-    -webkit-filter: grayscale(10%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(10%);
-  }
-
-  .banner {
-    width: 100%;                 /* Make the banner take the full width */
-    max-width: 100%;             /* Ensure it doesn't exceed the viewport width */
-    overflow: hidden;            /* Hide any overflow */
-}
-
-.banner img {
-    width: 100%;                 /* Responsive width for the image */
-    height: auto;                /* Maintain aspect ratio */
-    object-fit: cover;           /* Cover the area without distorting the image */
-    display: block;              /* Ensure no extra space around the image */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .banner {
-        height: 300px;           /* Set a fixed height on smaller screens */
-    }
-
-    .banner img {
-        object-position: center; /* Center the image when object-fit is used */
-    }
-}
-
-@media (max-width: 480px) {
-    .banner {
-        height: 200px;           /* Reduce banner height for very small screens */
-    }
-
-    .banner img {
-        object-position: center; /* Keep the image centered */
-    }
-}
-
-
-/* General Section Styles */
-section {
-    text-align: center;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    #welcome-page {
-        height: auto;  /* Allow auto height on smaller screens */
-        padding-top: 55px; /* Increase top padding for mobile devices */
-    }
-
-    .banner img {
-        width: 100%;  /* Ensure it remains responsive */
-        max-height: 70vh; /* Limit max height for the image on smaller screens */
-        object-fit: cover; /* Keep the aspect ratio */
-    }
-}
-
-
-
-
-
-
-
-
-/* ---------------Animations-------------- */
-
-/*------------Fly-In---------------> */
-/* @keyframes flyIn {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.fly-in {
-    animation: flyIn 3s forwards;
-} */
-
-/* Infinite loop----> */
-@keyframes flyIn {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    80% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1; /* The element stays at the final position for the pause */
-    }
-}
-
-.fly-in {
-    animation: flyIn 6s ease-in-out infinite;
-    animation-fill-mode: forwards;
-}
-
-/* Grow and trun------------> */
-@keyframes growTurn {
-    0% {
-        transform: scale(0.5) rotate(0deg);
-    }
-    100% {
-        transform: scale(1) rotate(360deg);
-        opacity: 1;
-    }
-}
-
-.grow-turn {
-    animation: growTurn 3s forwards;
-}
-
-/*----------- Swivel----------- */
-@keyframes swivel {
-    0% {
-        transform: rotateY(90deg);
-    }
-    100% {
-        transform: rotateY(0deg);
-        opacity: 1;
-    }
-}
-
-.swivel {
-    animation: swivel 2.5s forwards;
-}
-
-
-/* Typing animation---------------- */
-.typing-container {
-    font-size: 2rem;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    width: 0;
-    animation: typing 5s steps(11) 2s infinite, blink 12s step-end infinite;
-  }
-  
-  @keyframes typing {
-    0% { width: 0; }
-    50% { width: 70ch; }
-    100% { width: 0; }
-  }
-  
-  @keyframes blink {
-    from { border-color: transparent; }
-    to { border-color: black; }
-  }
-
-
-/* General Section Styles */
-section {
-    /* padding: 60px 20px; */
-    text-align: center;
-    border-bottom: 1px solid #000500; /* Border between sections */
-    
-}
-
-section img {
+/* Global reset to remove margin and padding */
+.responsiveimage {
     width: 100%;
-    height: 100;
-    object-fit: cover;
+    height: auto;
+    display: block; /* Ensure the image behaves as a block element */
+  }
+  /* Fix the overlap with the navigation bar */
+@media (max-width: 768px) {
+    .responsiveimage {
+        width: 200%; /* Increase the width beyond 100% */
+        height: auto; /* Ensure aspect ratio is maintained */
+        margin-top: 59px; /* Ensure it's not hidden by the nav bar */
+        margin-left: -5%; /* Center the image by moving it left */
+    }
 }
-
-section .content {
-    margin-top: 10px;
-}
-#eco-friendly-packaging{
-    padding: 0px 20px;
-}
-
-
 
 
 /* ----------- About Us Section Styles ----------- */
@@ -210,18 +37,6 @@ section .content {
 }
 
 /* Optional Gradient Background */
-#about-us::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, #EBD3F8 50%, #674636 100%); /* Gradient background */
-    z-index: 0;
-    opacity: 0.1; /* Subtle gradient */
-    border-radius: 1rem;
-}
 
 /* Content inside the section */
 .content {
@@ -942,4 +757,10 @@ ul li strong {
 
   p{
     font-family: 'Poppins', sans-serif;
+}
+
+
+.inspire{
+    color: #111;
+    background-color: #282626;
 }
