@@ -16,10 +16,15 @@
 
         /* Custom Logo Size and Position */
         .navbar {
-            padding: 1rem 1rem;
+            padding: 0.01rem 1rem;
             margin-bottom: 100rem; 
        
     }
+    @media (max-width: 767.98px) {
+    .navbar {
+        padding: 0.6rem 0.5rem; /* Decrease padding for mobile screens */
+    }
+}
         .navbar-brand {
             position: relative;
         }
@@ -32,6 +37,14 @@
             top: -55px; /* Adjust the logo to sit above the navbar */
         }
         
+        /* For mobile screens */
+        @media (min-width: 768px) and (max-width: 1024px) {
+    .navbar-brand img {
+        width: 40px;  /* Adjusted logo width for tablets */
+        height: 70px; /* Adjusted logo height for tablets */
+        top: -45px;  /* Adjust logo position to fit the tablet layout */
+    }
+}
         
 
 
@@ -147,15 +160,21 @@
 
 
       <!-- About Us Section -->
-<section id="about-us">
-    <div class="content">
-        <h2>About Us 📖</h2>
-        <hr class="divider">
-        <p class="text">At Battermami, we are on a mission to bring back the authentic flavors of traditional South Indian cuisine. We specialize in crafting fresh, ready-to-cook batters using heritage recipes passed down through generations. Our batters are made in small batches with the utmost care, ensuring freshness and authenticity in every pack. We believe in offering high-quality, preservative-free products that allow you to enjoy the goodness of home-cooked meals without the hassle of preparation. Join us in celebrating the art of traditional cooking, made easier and more accessible for today’s busy lifestyle.</p>
-    </div>
-</section>
+      <section id="about-us">
+        <div class="content">
+            <h2>About Us 📖</h2>
+            <hr class="divider">
+            <p class="text">At Battermami, we are on a mission to bring back the authentic flavors of traditional South Indian cuisine. We specialize in crafting fresh, ready-to-cook batters using heritage recipes passed down through generations. Our batters are made in small batches with the utmost care, ensuring freshness and authenticity in every pack. We believe in offering high-quality, preservative-free products that allow you to enjoy the goodness of home-cooked meals without the hassle of preparation. Join us in celebrating the art of traditional cooking, made easier and more accessible for today’s busy lifestyle.</p>
+        </div>
+    </section>
+    
 
 
+<!-- Video Content -->
+ 
+<div class="video-container">
+    <iframe src="https://www.youtube.com/embed/SjgkhnL1bvk?autoplay=1&mute=1" allowfullscreen></iframe>
+</div>
 
       <!-- How We Are Different Section -->
 
