@@ -9,8 +9,8 @@
   /* Fix the overlap with the navigation bar */
 @media (max-width: 768px) {
     .responsiveimage {
-        width: 200%; /* Increase the width beyond 100% */
-        height: auto; /* Ensure aspect ratio is maintained */
+        width: 120%; /* Increase the width beyond 100% */
+        height: 350px; /* Ensure aspect ratio is maintained */
         margin-top: 59px; /* Ensure it's not hidden by the nav bar */
         margin-left: -5%; /* Center the image by moving it left */
     }
@@ -726,40 +726,6 @@ ul li strong {
 /* Resoponsive --------------*/
 
 /* For mobile screens */
-@media (max-width: 40px) {
-        #welcome-page{
-            width: 100%;
-            height: 200px;
-            margin-bottom: 0%;
-        }
-    
-    .banner{
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        height: auto;
-    }
-
-   .welcome-page{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: auto;
-   }
-
-   h3{
-    font-size: 1.5rem;
-    margin-bottom: 0.3rem;
-    letter-spacing:-19px;
-    font-family: 'Poppins', sans-serif;
-   }
-  }
-
-  p{
-    font-family: 'Poppins', sans-serif;
-}
-
-
 .inspire{
     color: #111;
     background-color: #282626;
