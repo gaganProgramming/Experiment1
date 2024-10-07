@@ -10,7 +10,7 @@
 @media (max-width: 768px) {
     .responsiveimage {
         width: 120%; /* Increase the width beyond 100% */
-        height: 300px; /* Ensure aspect ratio is maintained */
+        height: auto; /* Ensure aspect ratio is maintained */
         margin-top: 59px; /* Ensure it's not hidden by the nav bar */
         margin-left: -5%; /* Center the image by moving it left */
     }
