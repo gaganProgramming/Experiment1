@@ -10,9 +10,10 @@
 @media (max-width: 768px) {
     .responsiveimage {
         width: 120%; /* Increase the width beyond 100% */
-        height: auto; /* Ensure aspect ratio is maintained */
+        height: 350px; /* Ensure aspect ratio is maintained */
         margin-top: 59px; /* Ensure it's not hidden by the nav bar */
         margin-left: -5%; /* Center the image by moving it left */
+        display: block;
     }
 }
 
@@ -382,6 +383,8 @@ ul li strong {
 #faq {
     padding: 50px ;
     background-color: #EBD3F8;
+    text-align: center; /* Center content */
+    
 }
 
 #faq h2 {
@@ -396,6 +399,7 @@ ul li strong {
 .faq-item {
     margin-bottom: 20px;
     border-bottom: 1px solid #ddd;
+    justify-content: center; /* Align center horizontally */
 }
 
 .faq-question {
@@ -500,7 +504,7 @@ ul li strong {
 .recipe {
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(28, 27, 27, 0.1);
     padding: 1.5rem;
     width: 300px;
     text-align: left;
@@ -728,5 +732,5 @@ ul li strong {
 /* For mobile screens */
 .inspire{
     color: #111;
-    background-color: #282626;
+    background-color: #403636;
 }
